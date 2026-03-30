@@ -327,7 +327,7 @@ generate_keys() {
     
     # Extract keys from X-Ray 25.9.11+ format
     PRIVATE_KEY=$(echo "$KEYS_OUTPUT" | grep "PrivateKey:" | cut -d' ' -f2)
-    PUBLIC_KEY=$(echo "$KEYS_OUTPUT" | grep "Password(PublicKey):" | cut -d' ' -f2)
+    PUBLIC_KEY=$(echo "$KEYS_OUTPUT" | grep "Password (PublicKey):" | cut -d':' -f2)
     
     # Check that keys are not empty
     if [[ -z "$PRIVATE_KEY" || -z "$PUBLIC_KEY" ]]; then
@@ -382,10 +382,10 @@ create_xray_config() {
         "security": "reality",
         "realitySettings": {
           "show": false,
-          "dest": "www.microsoft.com:443",
+          "dest": "www.rutube.ru:443",
           "xver": 0,
           "serverNames": [
-            "www.microsoft.com"
+            "www.rutube.ru"
           ],
           "privateKey": "$PRIVATE_KEY",
           "shortIds": [
