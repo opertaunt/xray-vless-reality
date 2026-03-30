@@ -688,7 +688,7 @@ create_client_configs() {
     print_header "CLIENT CONFIGURATIONS CREATION"
     
     # VLESS URL
-    VLESS_URL="vless://${UUID}@${EXTERNAL_IP}:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.microsoft.com&fp=chrome&pbk=${PUBLIC_KEY}&sid=${SHORT_ID}&type=tcp&headerType=none#MyVPN"
+    VLESS_URL="vless://${UUID}@${EXTERNAL_IP}:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.rutube.ru&fp=chrome&pbk=${PUBLIC_KEY}&sid=${SHORT_ID}&type=tcp&headerType=none#MyVPN"
     
     # Create configuration file
     CONFIG_FILE="/root/xray_client_configs.txt"
@@ -760,7 +760,7 @@ Encryption: none
 Flow: xtls-rprx-vision
 Transport: TCP
 TLS: Reality
-SNI: www.microsoft.com
+SNI: www.rutube.ru
 Fingerprint: chrome
 PublicKey: $PUBLIC_KEY
 ShortID: $SHORT_ID
