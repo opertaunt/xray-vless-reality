@@ -327,7 +327,7 @@ generate_keys() {
     
     # Extract keys from X-Ray 25.9.11+ format
     PRIVATE_KEY=$(echo "$KEYS_OUTPUT" | grep "PrivateKey:" | cut -d' ' -f2)
-    PUBLIC_KEY=$(echo "$KEYS_OUTPUT" | grep "Password (PublicKey):" | cut -d':' -f2)
+    PUBLIC_KEY=$(echo "$KEYS_OUTPUT" | grep "Password (PublicKey):" | cut -d': ' -f2)
     
     # Check that keys are not empty
     if [[ -z "$PRIVATE_KEY" || -z "$PUBLIC_KEY" ]]; then
@@ -382,10 +382,10 @@ create_xray_config() {
         "security": "reality",
         "realitySettings": {
           "show": false,
-          "dest": "www.aviasales.ru:443",
+          "dest": "www.vk.com:443",
           "xver": 0,
           "serverNames": [
-            "www.aviasales.ru"
+            "www.vk.com"
           ],
           "privateKey": "$PRIVATE_KEY",
           "shortIds": [
@@ -688,7 +688,7 @@ create_client_configs() {
     print_header "CLIENT CONFIGURATIONS CREATION"
     
     # VLESS URL
-    VLESS_URL="vless://${UUID}@${EXTERNAL_IP}:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.aviasales.ru&fp=chrome&pbk=${PUBLIC_KEY}&sid=${SHORT_ID}&type=tcp&headerType=none#MyVPN"
+    VLESS_URL="vless://${UUID}@${EXTERNAL_IP}:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.vk.com&fp=chrome&pbk=${PUBLIC_KEY}&sid=${SHORT_ID}&type=tcp&headerType=none#MyVPN"
     
     # Create configuration file
     CONFIG_FILE="/root/xray_client_configs.txt"
@@ -760,7 +760,7 @@ Encryption: none
 Flow: xtls-rprx-vision
 Transport: TCP
 TLS: Reality
-SNI: www.rutube.ru
+SNI: www.vk.com
 Fingerprint: chrome
 PublicKey: $PUBLIC_KEY
 ShortID: $SHORT_ID
