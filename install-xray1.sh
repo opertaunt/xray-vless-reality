@@ -382,10 +382,10 @@ create_xray_config() {
         "security": "reality",
         "realitySettings": {
           "show": false,
-          "dest": "www.rutube.ru:443",
+          "dest": "www.aviasales.ru:443",
           "xver": 0,
           "serverNames": [
-            "www.rutube.ru"
+            "www.aviasales.ru"
           ],
           "privateKey": "$PRIVATE_KEY",
           "shortIds": [
@@ -688,7 +688,7 @@ create_client_configs() {
     print_header "CLIENT CONFIGURATIONS CREATION"
     
     # VLESS URL
-    VLESS_URL="vless://${UUID}@${EXTERNAL_IP}:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.rutube.ru&fp=chrome&pbk=${PUBLIC_KEY}&sid=${SHORT_ID}&type=tcp&headerType=none#MyVPN"
+    VLESS_URL="vless://${UUID}@${EXTERNAL_IP}:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.aviasales.ru&fp=chrome&pbk=${PUBLIC_KEY}&sid=${SHORT_ID}&type=tcp&headerType=none#MyVPN"
     
     # Create configuration file
     CONFIG_FILE="/root/xray_client_configs.txt"
